@@ -66,11 +66,10 @@ function enableEdit(e){
     const data = {
       id,
       title,
-      bosy
+      body
     }
     //Fill form with current post
     ui.fillForm(data);
-  
   }
   
   e.preventDefault();
