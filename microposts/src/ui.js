@@ -51,6 +51,11 @@ class UI {
     }, 2000);
   }
   clearAlert(){
+    const currentAlert = document.querySelector(".alert");
+
+    if(currentAlert){
+      currentAlert.remove();
+    }
 
   }
   clearFields(){
