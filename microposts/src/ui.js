@@ -8,7 +8,7 @@ class UI {
     this.forState = 'add';
   }
   showPosts(posts){
-
+    
   }
 }
 
