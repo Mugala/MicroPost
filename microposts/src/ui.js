@@ -102,6 +102,7 @@ class UI {
     }else{
       this.postSubmit.textContent ='Post IT!'
       this.postSubmit.className ='post-submit btn btn-primary btn-block'; 
+      
       //Remove cancel btn if there
       if(document.querySelector('.post-cancel')){
         document.querySelector('.post-cancel').remove();

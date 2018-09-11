@@ -13,6 +13,10 @@ document.querySelector('#posts').addEventListener('click', deletePost);
 //Listen for edit state
 document.querySelector('#posts').addEventListener('click', enableEdit);
 
+//Listen for cancel
+document.querySelector('.card-form').addEventListener('click', cancelEdit);
+
+
 //Get posts
 function getPosts(){
   http.get('http://localhost:3000/posts')
@@ -28,6 +32,7 @@ function submitPost(){
   if(title === '' || body === ''){
     ui.showAlert('Please fill in all fields', 'alert alert-danger');
   }else{
+    
     const data = {
       title,
       body
@@ -75,6 +80,14 @@ function enableEdit(e){
     ui.fillForm(data);
   }
   
+  e.preventDefault();
+}
+//Cancel Edit state
+function cancelEdit(e){
+  if(e.target.classList.contains('post-cancel')){
+    ui.changeFormState('add');
+  }
+
   e.preventDefault();
 }
 
