@@ -28,6 +28,35 @@ class UI {
     });
     this.post.innerHTML = output;
   }
+
+  showAlert(message, className){
+    this.clearAlert();
+
+    //create div
+    const div = document.createElement('div');
+    //Add class name
+    div.className = className;
+    //add text
+    div.appendChild(document.createTextNode(message));
+    //get parent
+    const container = document.querySelector('.postsContainer');
+    //Get posts
+    const posts = document.querySelector('#posts');
+    //insert alert div
+    container.insertBefore(div,posts);
+
+    //Timeout
+    setTimeout(()=>{
+      this.clearAlert();
+    }, 2000);
+  }
+  clearAlert(){
+
+  }
+  clearFields(){
+    this.titleInput.value = '';
+    this.bodyInput.value = '';
+  }
 }
 
 export const ui = new UI();
